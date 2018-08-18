@@ -3,4 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="injectionService" class="com.koory1st.spring.ioc.injection.service.InjectionServiceImpl">
+        <property name="injectionDao" ref="injectionDao"></property>
+    </bean>
+    <bean id="injectionDao" class="com.koory1st.spring.ioc.injection.dao.InjectionDaoImpl"></bean>
 </beans>
