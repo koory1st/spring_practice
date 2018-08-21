@@ -4,5 +4,5 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
 default-init-method="defaultInitMethod" default-destroy-method="defaultDestroyMethod">
 
-    <bean id="beanLifeCircle" class="com.koory1st.spring.lifeCircle.bean.BeanLifeCircle" ></bean>
+    <bean id="beanLifeCircle" class="com.koory1st.spring.lifeCircle.bean.BeanLifeCircle" init-method="start" destroy-method="stop"></bean>
 </beans>
