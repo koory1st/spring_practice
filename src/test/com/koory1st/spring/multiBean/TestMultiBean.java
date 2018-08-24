@@ -14,6 +14,7 @@ public class TestMultiBean extends UnitTestBase {
         BeanInvoker beanInvoker = super.getBean("beanInvoker");
         beanInvoker.say();
         beanInvoker.say2();
+        beanInvoker.say3();
     }
 
 }

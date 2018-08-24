@@ -1,6 +1,7 @@
 package com.koory1st.spring.multiBean;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -14,6 +15,10 @@ public class BeanInvoker {
 
     @Autowired
     private Map<String, BeanInterface> map;
+
+    @Autowired
+    @Qualifier("beanImplTwo")
+    private BeanInterface beanInterface;
 
     public void say() {
         if (list == null) {
@@ -35,5 +40,9 @@ public class BeanInvoker {
         for (Map.Entry<String, BeanInterface> stringBeanInterfaceEntry : map.entrySet()) {
             System.out.println("BeanInvoker map:" + stringBeanInterfaceEntry.getKey() + "," + stringBeanInterfaceEntry.getValue().getClass().getName());
         }
+    }
+
+    public void say3() {
+        System.out.println("BeanInvoker:" + beanInterface.getClass().getName());
     }
 }
