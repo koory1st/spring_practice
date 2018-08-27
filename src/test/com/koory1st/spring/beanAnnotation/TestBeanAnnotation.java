@@ -23,4 +23,9 @@ public class TestBeanAnnotation extends UnitTestBase {
         beanAnnotation = super.getBean("beanAnnotation");
         System.out.println("beanAnnotation2:" + beanAnnotation.hashCode());
     }
+
+    @Test
+    public void testG() {
+        super.getBean("stringStoreTest");
+    }
 }
