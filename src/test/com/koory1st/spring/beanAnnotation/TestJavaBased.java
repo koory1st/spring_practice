@@ -23,4 +23,15 @@ public class TestJavaBased extends UnitTestBase {
 
         System.out.println(myDriverManager.getClass().getName());
     }
+
+    @Test
+    public void testScope() {
+        StoreInterface store = super.getBean("stringStore");
+
+        System.out.println(store.hashCode());
+
+        store = super.getBean("stringStore");
+        System.out.println(store.hashCode());
+    }
+
 }
