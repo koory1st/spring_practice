@@ -6,4 +6,6 @@ public class AspectBiz {
 
 //        throw new RuntimeException("12121");
     }
+
+//    public void init
 }

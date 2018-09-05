@@ -4,16 +4,17 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd"
        default-autowire="byType">
 
-    <bean id="moocAspect" class="com.koory1st.spring.aop.schema.advice.MoocAspect"></bean>
-    <bean id="aspectBiz" class="com.koory1st.spring.aop.schema.advice.biz.AspectBiz"></bean>
+    <bean id="moocAspect" class="com.koory1st.spring.aop.schema.advice.MoocAspect"/>
+    <bean id="aspectBiz" class="com.koory1st.spring.aop.schema.advice.biz.AspectBiz"/>
 
     <aop:config>
         <aop:aspect id="moocAspectAOP" ref="moocAspect">
-            <aop:pointcut id="moocPointcut" expression="execution(* com.koory1st.spring.aop.schema.advice.biz.AspectBiz.*(..))"></aop:pointcut>
-            <aop:before pointcut-ref="moocPointcut" method="before"></aop:before>
-            <aop:after-returning method="afterReturning" pointcut-ref="moocPointcut"></aop:after-returning>
-            <aop:after-throwing method="afterThrowing" pointcut-ref="moocPointcut"></aop:after-throwing>
-            <aop:after method="after" pointcut-ref="moocPointcut"></aop:after>
+            <aop:pointcut id="moocPointcut" expression="execution(* com.koory1st.spring.aop.schema.advice.biz.AspectBiz.*(..))"/>
+            <aop:before pointcut-ref="moocPointcut" method="before"/>
+            <aop:after-returning method="afterReturning" pointcut-ref="moocPointcut"/>
+            <aop:after-throwing method="afterThrowing" pointcut-ref="moocPointcut"/>
+            <aop:after method="after" pointcut-ref="moocPointcut"/>
+            <aop:around method="doBasicProfiling" pointcut-ref="moocPointcut"/>
         </aop:aspect>
     </aop:config>
 </beans>
