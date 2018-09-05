@@ -15,4 +15,9 @@ public class TestAspect extends UnitTestBase {
         AspectBiz aspectBiz = super.getBean("aspectBiz");
         aspectBiz.biz();
     }
+    @Test
+    public void testInit() {
+        AspectBiz aspectBiz = super.getBean("aspectBiz");
+        aspectBiz.init("aaaaa", 2);
+    }
 }

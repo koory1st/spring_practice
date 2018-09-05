@@ -28,4 +28,12 @@ public class MoocAspect {
         System.out.println("doBasicProfiling 2");
         return retVal;
     }
+
+    public Object aroundInit(ProceedingJoinPoint proceedingJoinPoint, String bizName, int times) throws Throwable {
+        System.out.println(bizName + " " + times);
+        System.out.println("aroundInit 1");
+        Object retVal = proceedingJoinPoint.proceed();
+        System.out.println("aroundInit 2");
+        return retVal;
+    }
 }
