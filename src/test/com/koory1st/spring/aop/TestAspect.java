@@ -1,5 +1,6 @@
 package com.koory1st.spring.aop;
 
+import com.koory1st.spring.aop.schema.advice.Fit;
 import com.koory1st.spring.aop.schema.advice.biz.AspectBiz;
 import com.koory1st.spring.autowiring.AutowiringService;
 import com.koory1st.spring.base.UnitTestBase;
@@ -19,5 +20,10 @@ public class TestAspect extends UnitTestBase {
     public void testInit() {
         AspectBiz aspectBiz = super.getBean("aspectBiz");
         aspectBiz.init("aaaaa", 2);
+    }
+    @Test
+    public void testFit() {
+        Fit fit = super.getBean("aspectBiz");
+        fit.filter();
     }
 }
